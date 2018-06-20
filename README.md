@@ -1,6 +1,6 @@
 # Examen Parcial SW2
 
-##Instrucciones:
+## Instrucciones:
 
 1. Crear una rama con su nombre completo ejemplo:
 
@@ -16,4 +16,4 @@
 
 		git push origin [nombre_apellido1_apellido2]
 
-[![Coverage Status](https://coveralls.io/repos/github/mavemore/Taller_Coveralls/badge.svg?branch=master)](https://coveralls.io/github/mavemore/Taller_Coveralls?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/mavemore/SW2_Examen_Parcial/badge.svg?branch=master)](https://coveralls.io/github/mavemore/SW2_Examen_Parcial?branch=master)
