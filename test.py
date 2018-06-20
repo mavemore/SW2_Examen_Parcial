@@ -65,7 +65,7 @@ class Test(unittest.TestCase):
 		especial = 'cancer'
 		dependientes = 4
 		cotizacion = cotizador.cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes)
-		self.assertEqual(cotizacion , 'El valor calculado de su cotización es de 40.00')
+		self.assertEqual(cotizacion , '')
 
 	def test_cotizador_cp7(self):
 		edad = 20
@@ -75,7 +75,7 @@ class Test(unittest.TestCase):
 		especial = 'cancer'
 		dependientes = 4
 		cotizacion = cotizador.cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes)
-		self.assertEqual(cotizacion , 'El valor calculado de su cotización es de 40.00')
+		self.assertEqual(cotizacion , '')
 
 if __name__ == '__main__':
 	unittest.main()
