@@ -116,5 +116,36 @@ class Test(unittest.TestCase):
 		result = cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes)
 		self.assertEqual("No se puede realizar una cotización para el valor ingresado de dependientes.",result)
 
+	def test_cotizador_10(self):
+		ciudad = "Guayaquil"
+		edad = 19
+		sexo = "mujer"
+		estado_civil = "casado"
+		dependientes = 6
+		especial = "diabetes"
+		result = cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes)
+		self.assertEqual("Solo se puede realizar la cotización para hasta 4 dependientes en línea. \
+			Por favor acérquese a la agencia y presente una solicitud.",result)
+
+	def test_cotizador_7(self):
+		ciudad = "Guayaquil"
+		edad = 19
+		sexo = "mujer"
+		estado_civil = "dsaa"
+		dependientes = 0
+		especial = "diabetes"
+		result = cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes)
+		self.assertEqual("Estado civil inválido",result)
+
+	def test_cotizador_8(self):
+		ciudad = "Guayaquil"
+		edad = 19
+		sexo = 1
+		estado_civil = "casado"
+		dependientes = 0
+		especial = "diabetes"
+		result = cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes)
+		self.assertEqual("Sexo inválido",result)
+
 if __name__ == '__main__':
 	unittest.main()
