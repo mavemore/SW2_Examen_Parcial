@@ -56,7 +56,7 @@ def cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes):
 	valor_total = 0.0
 	if ciudad in ['Guayaquil','Quito','Cuenca','Machala']:
 		if dependientes <= 4:
-			if edad>=0 and edad<=75:
+			if edad>=18 and edad<=75:
 				cuota_basica = calcular_cuota_basica(dependientes)
 				valor_adicional = calcular_valores_adicionales(edad, sexo, estado_civil, especial)
 				valor_total = cuota_basica + valor_adicional
