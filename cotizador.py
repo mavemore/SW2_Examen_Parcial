@@ -56,13 +56,14 @@ def cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes):
 	valor_total = 0.0
 	if ciudad in ['Guayaquil','Quito','Cuenca','Machala']:
 		if dependientes <= 4:
-			if edad>=0 and edad<=75:
+			if edad>=18 and edad<=75:
+				
 				cuota_basica = calcular_cuota_basica(dependientes)
 				valor_adicional = calcular_valores_adicionales(edad, sexo, estado_civil, especial)
 				valor_total = cuota_basica + valor_adicional
 				resultado = "El valor calculado de su cotización es de %.2f" % valor_total
 			else:
-				resultado = "La edad ingresada no es válida. Debe de encontrarse entre 0 y 75 años."
+				resultado = "La edad ingresada no es válida. Debe de encontrarse entre 18 y 75 años."
 		elif dependientes <=9 and dependientes > 4:
 			resultado = "Solo se puede realizar la cotización para hasta 4 dependientes en línea. \
 			Por favor acérquese a la agencia y presente una solicitud."
