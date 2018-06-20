@@ -49,14 +49,14 @@ def calcular_valores_adicionales(edad, sexo, estado_civil, especial):
 	return valor_adicional
 
 def cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes):
-	"""Calcula el valor total del sguro cotizado al asegurado, 
+	"""Calcula el valor total del seguro cotizado al asegurado, 
 	dependiendo de su edad, sexo, estado civil, ciudad, numero de dependientes
 	y si posee una pre-condición especial. 
     """
 	valor_total = 0.0
 	if ciudad in ['Guayaquil','Quito','Cuenca','Machala']:
 		if dependientes <= 4:
-			if edad>=0 and edad<=75:
+			if edad>=18 and edad<=75:
 				cuota_basica = calcular_cuota_basica(dependientes)
 				valor_adicional = calcular_valores_adicionales(edad, sexo, estado_civil, especial)
 				valor_total = cuota_basica + valor_adicional
@@ -70,4 +70,71 @@ def cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes):
 			resultado = "No se puede realizar una cotización para el valor ingresado de dependientes."
 	else:
 		resultado = "Saludcita no opera en la ciudad ingresada."
-	return resultado
+	return valor_total
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+def test_cotizador_1(ciudad, edad, sexo, estado_civil, especial, dependientes):
+	valor_total = 0.0
+	if ciudad in ['Guayaquil','Quito','Cuenca','Machala']:
+		if dependientes <= 4:
+			if edad>=18 and edad<=40:
+				cuota_basica = calcular_cuota_basica(dependientes)
+				valor_adicional = calcular_valores_adicionales(edad, sexo, estado_civil, especial)
+				valor_total = cuota_basica + valor_adicional
+				resultado = "El valor calculado de su cotización es de %.2f" % valor_total
+			else:
+				resultado = "La edad ingresada no es válida. Debe de encontrarse entre 0 y 75 años."
+		elif dependientes <=9 and dependientes > 4:
+			resultado = "Solo se puede realizar la cotización para hasta 4 dependientes en línea. \
+			Por favor acérquese a la agencia y presente una solicitud."
+		else:
+			resultado = "No se puede realizar una cotización para el valor ingresado de dependientes."
+	else:
+		resultado = "Saludcita no opera en la ciudad ingresada."
+	return self.assertEqual(valor_total,80)
+	
+	
+def test_cotizador_5(ciudad, edad, sexo, estado_civil, especial, dependientes):
+	valor_total = 0.0
+	if ciudad in ['Guayaquil','Quito','Cuenca','Machala']:
+		if dependientes <= 4:
+			if edad>=18 and edad<=40:
+				cuota_basica = calcular_cuota_basica(dependientes)
+				valor_adicional = calcular_valores_adicionales(edad, sexo, estado_civil, especial)
+				valor_total = cuota_basica + valor_adicional
+				resultado = "El valor calculado de su cotización es de %.2f" % valor_total
+			else:
+				resultado = "La edad ingresada no es válida. Debe de encontrarse entre 0 y 75 años."
+		elif dependientes <=9 and dependientes > 4:
+			resultado = "Solo se puede realizar la cotización para hasta 4 dependientes en línea. \
+			Por favor acérquese a la agencia y presente una solicitud."
+		else:
+			resultado = "No se puede realizar una cotización para el valor ingresado de dependientes."
+	else:
+		resultado = "Saludcita no opera en la ciudad ingresada."
+	return self.assertEqual(valor_total,110)
+
+
+		
