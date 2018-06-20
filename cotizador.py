@@ -2,6 +2,9 @@
 from __future__ import unicode_literals
 
 def calcular_cuota_basica(dependientes):
+	"""Calcula la cuota basica del asegurado, 
+	dependiendo de su numero de dependientes. 
+    """
 	cuota_basica = 0
 	if dependientes == 0:
 		cuota_basica = 30
@@ -16,6 +19,10 @@ def calcular_cuota_basica(dependientes):
 	return cuota_basica
 
 def calcular_valores_adicionales(edad, sexo, estado_civil, especial):
+	"""Calcula los valores adicionales del asegurado, 
+	dependiendo de su edad, sexo, estado civil y si 
+	posee una pre-condición especial. 
+    """
 	valor_adicional = 0
 	if edad >= 18 and edad <= 40:
 		if sexo == 'mujer':
@@ -42,6 +49,10 @@ def calcular_valores_adicionales(edad, sexo, estado_civil, especial):
 	return valor_adicional
 
 def cotizar_seguro(ciudad, edad, sexo, estado_civil, especial, dependientes):
+	"""Calcula el valor total del sguro cotizado al asegurado, 
+	dependiendo de su edad, sexo, estado civil, ciudad, numero de dependientes
+	y si posee una pre-condición especial. 
+    """
 	valor_total = 0.0
 	if ciudad in ['Guayaquil','Quito','Cuenca','Machala']:
 		if dependientes <= 4:
