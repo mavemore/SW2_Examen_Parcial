@@ -8,7 +8,7 @@ class Test(unittest.TestCase):
 	#Reemplace ID por el número identificador que utilizó en la plantilla de pruebas.
 	def test_cotizador_CP1(self):
 		
-	
+		#hubo que alterar el cotizador para esta prueba
 		self.assertEqual("La edad ingresada no es válida. Debe de encontrarse entre 18 y 75 años.",cotizador.cotizar_seguro("Guayaquil",17, "mujer", "soltero", "",0))
 		
 	def test_cotizador_CP2(self):
